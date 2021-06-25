@@ -1,0 +1,16 @@
+<span>Edit report</span>
+<%= form_for :mark, url: post_mark_path(@post, @mark), method: :patch do |f| %>
+  <% if @mark.errors.any? %>
+    <% @mark.errors.full_messages.each do |msg| %>
+      <div class="alert alert-danger"><%= msg %></div>
+    <% end %>
+  <% end %>
+  <p>
+    <h3>Points: <%= f.text_field :points, :class => 'form-control' %></h3>
+  </p>
+
+  <p>
+    <%= f.submit :class => 'btn btn-success' %>
+  </p>
+
+<% end %>
